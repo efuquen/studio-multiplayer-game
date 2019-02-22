@@ -1,0 +1,16 @@
+steps:
+- name: docker  
+  image: plugins/docker
+  when:
+    branch:
+    - master
+    event:
+    - pull_request
+  settings:
+    repo: efuquen/studio-multiplayer-game
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags:
+      - pr$DRONE_PULL_REQUEST
