@@ -16,4 +16,4 @@ steps:
     password:
       from_secret: docker_password
     tags:
-      - pr$DRONE_PULL_REQUEST
+      - pr${DRONE_PULL_REQUEST}
